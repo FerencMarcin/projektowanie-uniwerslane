@@ -103,7 +103,6 @@ inputField.addEventListener('input', function () {
     let options = dataList.querySelectorAll('option')
     options.forEach(function (option) {
         if (option.value.toLowerCase().includes(inputValue)) {
-            console.log(option.value)
             searchResultsDiv.style.display = 'block'
             let resultDiv = document.createElement('div')
             resultDiv.textContent = option.value
