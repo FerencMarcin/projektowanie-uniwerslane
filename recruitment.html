@@ -20,11 +20,20 @@
         <a class="navbar-brand ps-3" href="index.html">BIP</a>
         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
             <div class="input-group">
-                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
+                <input class="form-control" type="text" placeholder="Wyszukaj..." aria-label="Wyszukaj..."
                     aria-describedby="btnNavbarSearch" />
+                    <datalist id="searchItems">
+                        <option value="Strona główna" target="index.html">
+                        <option value="Wydziały" target="departments.html">
+                        <option value="Rekrutacja" target="recruitment.html">
+                        <option value="Wydział Mechaniczny" target="departments.html#mechaniczny">
+                        <option value="Wydział Elektrotechniki i Informatyki" target="departments.html#elektrotechniki">
+                        <option value="Wydział Budownictwa i Architektury" target="departments.html#budownictwa">
+                    </datalist>
                 <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i
                         class="fas fa-search"></i></button>
             </div>
+            <div class="input-group searchItems"></div>
         </form>
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
@@ -57,25 +66,25 @@
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Menu</div>
                         <a class="nav-link" href="index.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-house"></i></div>
                             Strona główna
                         </a>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
                             aria-expanded="false" aria-controls="collapsePages">
-                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
                             Wydziały
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="departments.html#mechaniczny">Mechaniczny</a>
-                                <a class="nav-link" href="departments.html#elektrotechniki">Elktrotechniki i Informatyki</a>
-                                <a class="nav-link" href="departments.html#budownictwa">Budownictwa i Architektury</a>
+                                <a class="nav-link" href="departments.html#mechaniczny"><div class="sb-nav-link-icon"><i class="fa-solid fa-compass-drafting"></i></div>Mechaniczny</a>
+                                <a class="nav-link" href="departments.html#elektrotechniki"><div class="sb-nav-link-icon"><i class="fa-solid fa-bolt-lightning"></i></div>Elktrotechniki i Informatyki</a>
+                                <a class="nav-link" href="departments.html#budownictwa"><div class="sb-nav-link-icon"><i class="fa-solid fa-stairs"></i></div>Budownictwa i Architektury</a>
                             </nav>
                         </div>
                         <a class="nav-link" href="recruitment.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                             Rekrutacja
                         </a>
                     </div>

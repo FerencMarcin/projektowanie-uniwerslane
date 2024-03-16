@@ -78,5 +78,47 @@ document.getElementById('high-contrast').addEventListener('click', function () {
 
 document.getElementById('default-contrast').addEventListener('click', function () {
     document.body.classList.remove('high-contrast');
-    sessionStorage.removeItem('contrastMode');
+    sessionStorage.removeItem('contrastMode')
 });
+
+let inputField = document.querySelector('.form-control')
+let searchBar = document.querySelector('.searchItems')
+let dataList = document.getElementById('searchItems')
+
+let searchResultsDiv = document.createElement('div')
+searchResultsDiv.id = 'searchResults'
+searchResultsDiv.classList.add('search-results')
+searchResultsDiv.style.display = 'none'
+searchBar.appendChild(searchResultsDiv)
+
+inputField.addEventListener('input', function () {
+    searchResultsDiv.innerHTML = ''
+
+    searchResultsDiv.style.display = 'none'
+
+    let inputValue = inputField.value.toLowerCase()
+
+    if (inputValue === '') return
+
+    let options = dataList.querySelectorAll('option')
+    options.forEach(function (option) {
+        if (option.value.toLowerCase().includes(inputValue)) {
+            console.log(option.value)
+            searchResultsDiv.style.display = 'block'
+            let resultDiv = document.createElement('div')
+            resultDiv.textContent = option.value
+            resultDiv.addEventListener('click', function () {
+                window.location.href = option.getAttribute('target')
+            })
+            searchResultsDiv.appendChild(resultDiv)
+        }
+    })
+})
+
+document.addEventListener('click', function (event) {
+    if (!inputField.contains(event.target) || inputField.value === '') {
+        searchResultsDiv.style.display = 'none'
+    } else {
+        searchResultsDiv.style.display = 'block'
+    }
+})
