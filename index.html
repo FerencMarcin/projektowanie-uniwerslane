@@ -1,213 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    </head>
-    <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-            <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">BIP</a>
-            <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                </div>
-            </form>
-            <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <!-- <li><span class="dropdown-item" href="#!">Ustawienia</span></li> -->
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><button class="dropdown-item" id="increase-font">Zwiększ czcionkę</button></li>
-                        <li><button class="dropdown-item" id="reset-font">Resetuj czcionkę</button></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><button class="dropdown-item" id="increase-letter-spacing">Zwiększ odstępy</button></li>
-                        <li><button class="dropdown-item" id="reset-letter-spacing">Resetuj odstępy</button></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Menu</div>
-                            <a class="nav-link" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Strona główna
-                            </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Dane
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Podstrony
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">Podstrona1</a>
-                                            <a class="nav-link" href="404.html">Podstrona2</a>
-                                        </nav>
-                                    </div>
-                                </nav>
-                            </div>
-                            <a class="nav-link" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Informacje
-                            </a>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>BIP - WST</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">BIP</a>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
+                    aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i
+                        class="fas fa-search"></i></button>
+            </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="fas fa-solid fa-gear"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <!-- <li><span class="dropdown-item" href="#!">Ustawienia</span></li> -->
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><button class="dropdown-item" id="increase-font">Zwiększ czcionkę</button></li>
+                    <li><button class="dropdown-item" id="reset-font">Resetuj czcionkę</button></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><button class="dropdown-item" id="increase-letter-spacing">Zwiększ odstępy</button></li>
+                    <li><button class="dropdown-item" id="reset-letter-spacing">Resetuj odstępy</button></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Menu</div>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Strona główna
+                        </a>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
+                            aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Dane
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                    data-bs-target="#pagesCollapseError" aria-expanded="false"
+                                    aria-controls="pagesCollapseError">
+                                    Podstrony
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
+                                    data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="401.html">Podstrona1</a>
+                                        <a class="nav-link" href="404.html">Podstrona2</a>
+                                    </nav>
+                                </div>
+                            </nav>
                         </div>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Informacje
+                        </a>
                     </div>
-                    <!-- <div class="sb-sidenav-footer">
+                </div>
+                <!-- <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
                         Start Bootstrap
                     </div> -->
-                </nav>
-            </div>
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Strona główna</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Podstawowe informacje</li>
-                        </ol>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                DataTable Example
-                            </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>2011/07/25</td>
-                                            <td>$170,750</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>66</td>
-                                            <td>2009/01/12</td>
-                                            <td>$86,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2012/03/29</td>
-                                            <td>$433,060</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2012/03/29</td>
-                                            <td>$433,060</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2012/03/29</td>
-                                            <td>$433,060</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2012/03/29</td>
-                                            <td>$433,060</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-bar me-1"></i>
-                                        Bar Chart Example
-                                    </div>
-                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; MF & KK 2024</div>
-                            <div>
-                                <a href="#">Polityka prywatności</a>
-                                &middot;
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
+            </nav>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/chart-area-demo.js"></script>
-        <script src="assets/demo/chart-bar-demo.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js"></script>
-    </body>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4"><span>Wyższa Szkoła Techniczna</span></h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active"><span>Podstawowe informacje</span></li>
+                    </ol>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            <span>Dane teleadresowe</span>
+                        </div>
+                        <div class="card-body">
+                            <table>
+                                <!-- <table id="datatablesSimple"> -->
+                                <!-- <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
+                                        </tr>
+                                    </thead> -->
+                                <!-- <tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
+                                        </tr>
+                                    </tfoot> -->
+                                <tbody>
+                                    <tr>
+                                        <td><span>ulica</span></td>
+                                        <td><span>ul. Koralowa 44c</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Kod pocztowy</span></td>
+                                        <td><span>20-044</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Poczta</span></td>
+                                        <td><span>Lublin</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Miejscowość</span></td>
+                                        <td><span>Lublin</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Województwo</span></td>
+                                        <td><span>lubelskie</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Powiat</span></td>
+                                        <td><span>Lublin</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Telefon</span></td>
+                                        <td><span>123456789</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Fax</span></td>
+                                        <td><span>098765432</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>E-mail</span></td>
+                                        <td><span>wst@wst.pl</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>NIP</span></td>
+                                        <td><span>2233512345</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>REGON</span></td>
+                                        <td><span>000001983</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>www</span></td>
+                                        <td><a href=""><span>https://wst.pl/</span></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            <span>Godziny otwarcia</span>
+                        </div>
+                        <div class="card-body">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><span>Poniedziałek</span></td>
+                                        <td><span>7:30 - 17:30</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Wtorek</span></td>
+                                        <td><span>7:30 - 17:30</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Środa</span></td>
+                                        <td><span>9:30 - 19:30</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Czwartek</span></td>
+                                        <td><span>7:30 - 17:30</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Piątek</span></td>
+                                        <td><span>7:30 - 17:30</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Sobota</span></td>
+                                        <td><span>9:00 - 13:00</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            <span>Redakcja BIP</span>
+                        </div>
+                        <div class="card-body">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><span>Redaktor</span></td>
+                                        <td><span>mgr Karol Kowalski</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Telefon</span></td>
+                                        <td><span>343555897</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Fax</span></td>
+                                        <td><span>Brak</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>E-mail</span></td>
+                                        <td><span>k.kowalski@wst.pl</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <hr>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="list-inline footer-logos">
+                            <li class="list-inline-item">
+                                <a title="Program Innowacyjna Gospodarka" class="innowacyjna" target="_self"
+                                    href="#">
+                                    <img class="footer-logo"
+                                        src="https://zehs.com.pl/wp-content/uploads/2022/05/innowacyjna-gospodarka.png" alt="Program Innowacyjna Gospodarka">
+
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+
+                                <a title="Projekt współfinansowany przez Unię Europejską" class="unia"
+                                    target="_blank" href="https://europa.eu/index_pl.htm">
+                                    <img class="footer-logo"
+                                        src="https://www.genesis.pl/assets/Unia-Europejska-Europejski-Fundusz-Rozwoju-Regionalnego.png" alt="Projekt współfinansowany przez Unię Europejską">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+
+                                <a href="https://dane.gov.pl" title="Otwarte Dane" class="danepubliczne"
+                                    target="_blank">
+                                    <img class="footer-logo"
+                                        src="https://techsetter.pl/wp-content/uploads/2021/02/otwarte_dane_news2402.jpg" alt="GOV Otwarte Dane">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+
+                                <a href="https://epuap.gov.pl/"
+                                    title="Elektroniczna Platforma Usług Administracji Publicznej" class="epuap"
+                                    target="_blank">
+                                    <img class="footer-logo"
+                                        src="https://witd.lublin.pl/wp-content/uploads/2021/09/EPUAP_logo-1024x208.jpg" alt="Elektroniczna Platforma Usług Administracji Publicznej">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+
+                                <a href="https://www.bip.gov.pl"
+                                    title="Strona główna Biuletynu Informacji Publicznej" class="bip"
+                                    target="_blank">
+                                    <img class="footer-logo"
+                                        src="https://bip.pcm-szpital.pl/images/loga/bip-logo.jpg" alt="Strona główna Biuletynu Informacji Publicznej">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p><small>UWAGA! W trakcie korzystania z SSDIP na komputerze użytkownika przechowywane są
+                                    informacje (tzw. „ciasteczka”, ang. „cookies”), które pozwalają na dostosowanie
+                                    świadczonych usług elektronicznych do indywidualnych potrzeb użytkowników. Warunki
+                                    przechowywania lub dostępu do plików cookie mogą być określone przez użytkownika w
+                                    ustawieniach przeglądarki internetowej. Kontynuacja korzystania z SSDIP bez
+                                    dokonania wyżej wspomnianych zmian w ustawieniach przeglądarki internetowej uznana
+                                    zostaje za wyrażenie zgody przez użytkownika na wykorzystywanie plików
+                                    cookie.<small></p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; MF & KK 2024</div>
+                        <div>
+                            <a href="#">Polityka prywatności</a>
+                            &middot;
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+</body>
+
 </html>
