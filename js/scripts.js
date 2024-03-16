@@ -80,14 +80,3 @@ document.getElementById('default-contrast').addEventListener('click', function (
     document.body.classList.remove('high-contrast');
     sessionStorage.removeItem('contrastMode');
 });
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     fetch('navigation.html')
-//         .then(response => response.text())
-//         .then(html => {
-//             document.getElementById('navbar-placeholder').innerHTML = html;
-//         })
-//         .catch(error => {
-//             console.warn('Error loading the navigation:', error);
-//         });
-// });
