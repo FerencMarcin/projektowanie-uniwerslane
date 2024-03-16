@@ -51,6 +51,11 @@ window.addEventListener('DOMContentLoaded', event => {
         root.style.letterSpacing = `${savedLetterSpacing}px`;
     }
 
+    const contrastMode = sessionStorage.getItem('contrastMode');
+    if (contrastMode === 'high-contrast') {
+        document.body.classList.add('high-contrast');
+    }
+
     const sidebarToggle = document.body.querySelector('#sidebarToggle');
     if (sidebarToggle) {
         // Uncomment Below to persist sidebar toggle between refreshes
@@ -64,6 +69,16 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     }
 
+});
+
+document.getElementById('high-contrast').addEventListener('click', function () {
+    document.body.classList.add('high-contrast');
+    sessionStorage.setItem('contrastMode', 'high-contrast');
+});
+
+document.getElementById('default-contrast').addEventListener('click', function () {
+    document.body.classList.remove('high-contrast');
+    sessionStorage.removeItem('contrastMode');
 });
 
 // document.addEventListener('DOMContentLoaded', function () {

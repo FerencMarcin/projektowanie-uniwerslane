@@ -11257,3 +11257,49 @@ body {
   max-height: 30px;
   margin-right: 15px;
 }
+
+body.high-contrast {
+  background: black !important;
+  color: yellow !important;
+  --main-bg-color: #000000 !important;
+  --main-text-color: #ffffff !important;
+  --bs-card-bg: black !important;
+  --bs-card-bg: #000 !important;
+  --bs-breadcrumb-item-active-color: #ffffff !important;
+}
+
+.high-contrast .card {
+  --bs-card-border-color: yellow !important;
+  --bs-card-bg: black !important;
+}
+
+.high-contrast .bg-light {
+  background-color: black !important;
+}
+
+.high-contrast .nav-link {
+  color: #fff !important;
+}
+
+.high-contrast .nav-link:hover,
+.high-contrast .dropdown-item {
+  color: yellow !important;
+}
+
+.high-contrast .dropdown-menu {
+  --bs-dropdown-bg: var(--bs-gray-800) !important;
+}
+
+.high-contrast .dropdown-item:hover {
+  background-color: var(--bs-gray-900) !important;
+}
+
+.high-contrast .breadcrumb-item.active,
+.high-contrast .text-muted,
+.high-contrast .sb-sidenav-menu-heading {
+  color: lightyellow !important;
+}
+
+.high-contrast a {
+  color: lightcyan !important;
+}
